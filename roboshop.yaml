@@ -70,7 +70,7 @@
     record: "{{ domain_name }}" #daws90s.sbs
     ttl: 1
     type: A
-  loop: "{{ instances }}"
+    loop: "{{ instances }}"
   when: 
   - action == "delete"
   - item == "frontend"
