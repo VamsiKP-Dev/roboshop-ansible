@@ -60,7 +60,7 @@
     record: "{{ item }}.{{ domain_name }}" #mongodb.daws90s.sbs
     ttl: 1
     type: A
-  loop: "{{ ec2_output.results }}"
+  loop: "{{ instances }}"
   when: action == "delete"
 
 - name: delete r53 records for fronted
