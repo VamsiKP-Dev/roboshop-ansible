@@ -55,22 +55,22 @@
 
   - name: delete r53 records
     amazon.aws.route53:
-    state: absent
-    zone: "{{ domain_name }}"
-    record: "{{ item }}.{{ domain_name }}" #mongodb.daws90s.sbs
-    ttl: 1
-    type: A
+      state: absent
+      zone: "{{ domain_name }}"
+      record: "{{ item }}.{{ domain_name }}" #mongodb.daws90s.sbs
+      ttl: 1
+      type: A
   loop: "{{ instances }}"
   when: action == "delete"
 
 - name: delete r53 records for fronted
   amazon.aws.route53:
-    state: absent
-    zone: "{{ domain_name }}"
-    record: "{{ domain_name }}" #daws90s.sbs
-    ttl: 1
-    type: A
-    loop: "{{ instances }}"
+      state: absent
+      zone: "{{ domain_name }}"
+      record: "{{ domain_name }}" #daws90s.sbs
+      ttl: 1
+      type: A
+  loop: "{{ instances }}"
   when: 
-  - action == "delete"
-  - item == "frontend"
+    - action == "delete"
+    - item == "frontend"
