@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars:
-    instances: ["mongodb", "redis", "mysql", "rabbitmq", "frontend"]
+    instances: ["mongodb", "redis", "mysql", "rabbitmq", "catalogue", "user", "cart", "shipping", "payment","frontend"]
     image_id: ami-0220d79f3f480ecf5
     domain_name: daws90s.sbs #replace with your domain
     action: create
@@ -74,3 +74,8 @@
     when: 
     - action == "delete"
     - item == "frontend"
+
+  # - name: delete ec2 instances
+  #   amazon.aws.ec2_instance:
+  #     state: absent
+  #     name: "roboshop-{{ item }}"
