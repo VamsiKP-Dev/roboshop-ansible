@@ -61,3 +61,7 @@
       msg: "{{ catalogue_output }}"
     tags:
     - mongodb
+  - name: clean dnf cache
+    command: dnf clean all
+  - name: make cache
+    command: dnf makecache
