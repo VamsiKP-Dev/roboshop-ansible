@@ -46,8 +46,8 @@
   - name: deamon reload
     systemd_service:
       name: user
-      deamon_reload: true
-  - name: enable and restart user
+      daemon_reload: true
+  - name: enable and start catalogue
     service:
       name: user
       state: restarted
