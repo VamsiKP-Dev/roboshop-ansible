@@ -70,6 +70,7 @@
     systemd_service:
       name: catalogue
       demon_reload: true
+    when: unit_file.change
   - name: enable and start catalogue
     service:
       name: catalogue
