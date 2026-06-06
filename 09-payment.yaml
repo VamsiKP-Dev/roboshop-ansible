@@ -10,7 +10,7 @@
     - python3 
     - gcc 
     - python3-devel
-    - name: create roboshop system user
+  - name: create roboshop system user
     user:
       name: roboshop
       system: true
