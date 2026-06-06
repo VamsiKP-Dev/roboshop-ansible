@@ -67,8 +67,7 @@
     tags:
     - mongodb
   - name: deamon reload
-    systemd_service:
-      name: catalogue
+    systemd:
       demon_reload: true
   - name: enable and start catalogue
     service:
