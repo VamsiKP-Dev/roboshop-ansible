@@ -46,7 +46,7 @@
   - name: deamon reload
     systemd_service:
       name: user
-      demon_reload: true
+      deamon_reload: true
   - name: enable and restart user
     service:
       name: user
